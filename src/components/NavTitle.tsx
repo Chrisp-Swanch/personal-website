@@ -14,7 +14,7 @@ function NavTitle(props: Props) {
 
   return (
     <span className="nav__option" id="title">
-      <Link to="#">{display[0]} | {display[1]}</Link>
+      <Link to="#"><h1>{display[0]} | {display[1]}</h1></Link>
     </span>
   )
 }

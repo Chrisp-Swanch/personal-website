@@ -47,6 +47,10 @@ a {
   #title {
     padding: 0;
     margin-right: auto;
+
+    h1 {
+      margin: 0px;
+    }
   } 
 }
 
@@ -64,6 +68,11 @@ a {
 
   p {
     margin: 0;
+  }
+
+  h2 {
+    margin: 0px;
+    font-size: inherit;
   }
 
   &__selection {
