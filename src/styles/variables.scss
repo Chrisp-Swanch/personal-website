@@ -1,9 +1,10 @@
 @import './fonts/tiempos-fine.scss';
 
+$background-main: rgba(249, 239, 216, 0.90);
 $accent-green: rgba(3, 33, 3, 0.92);
+
 $text-main: rgba(0, 0, 0, 0.92);
 
-$background-main: rgba(249, 239, 216, 0.90);
 
 @mixin green-text {
   text-decoration: none;

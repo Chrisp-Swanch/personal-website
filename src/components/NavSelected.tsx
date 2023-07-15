@@ -6,7 +6,7 @@ function NavSelected(props: Props) {
   const { selection } = props
   return (
     <span id="vertical-text">
-      {` - ${selection}`}
+      - {selection}
     </span>
   )
 }

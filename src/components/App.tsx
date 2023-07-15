@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Nav setNavSelection={setNavSelection} />
-      <NavSelected selection={navSelection} setNavSelection={setNavSelection}/>
+      <NavSelected selection={navSelection} />
     </>
   )
 }
