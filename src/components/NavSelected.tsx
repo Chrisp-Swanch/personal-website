@@ -5,9 +5,10 @@ interface Props {
 function NavSelected(props: Props) {
   const { selection } = props
   return (
-    <span id="vertical-text">
-      - {selection}
-    </span>
+    <div className="vertical-text">
+      <p>-</p>
+      <span className="vertical-text__selection">{selection}</span>
+    </div>
   )
 }
 

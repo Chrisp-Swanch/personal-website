@@ -8,8 +8,10 @@ function App() {
 
   return (
     <>
-      <Nav setNavSelection={setNavSelection} />
-      <NavSelected selection={navSelection} />
+      <section className="nav-section">
+        <Nav setNavSelection={setNavSelection} />
+        <NavSelected key={navSelection} selection={navSelection} />
+      </section>
       <Views />
     </>
   )
