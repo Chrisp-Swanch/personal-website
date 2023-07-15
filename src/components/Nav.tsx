@@ -18,12 +18,7 @@ const navOptions = [
   },
 ]
 
-interface Props {
-  setNavSelection: React.Dispatch<React.SetStateAction<string>>
-}
-
-function Nav(props: Props) {
-  const { setNavSelection } = props
+function Nav() {
 
   return (
     <nav className="nav-container">
@@ -34,7 +29,6 @@ function Nav(props: Props) {
           <NavOption
             key={option}
             option={option}
-            setNavSelection={setNavSelection}
           />
         )
       })}

@@ -1,21 +1,22 @@
 import Nav from './Nav'
 import NavSelected from './NavSelected'
-import { useState, Dispatch, SetStateAction } from 'react'
+import { useState } from 'react'
 import Views from './Views'
-import React from 'react'
-
-type ContextType = string | Dispatch<SetStateAction<string>>[]
-
-export const Context = React.createContext('about' as ContextType)
+import { Context, ContextProps } from '../context'
 
 function App() {
-  const [navSelection, setNavSelection] = useState('about' as string)
+  const [navSelection, setNavSelection] = useState('about')
+
+  const contextValue: ContextProps = {
+    navSelection,
+    setNavSelection,
+  }
 
   return (
     <>
-      <Context.Provider value={[navSelection, setNavSelection] as ContextType}>
+      <Context.Provider value={contextValue}>
         <section className="nav-section">
-          <Nav setNavSelection={setNavSelection} />
+          <Nav />
           <NavSelected key={navSelection} selection={navSelection} />
         </section>
         <Views />
