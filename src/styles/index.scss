@@ -63,7 +63,7 @@ a {
   .section-container {
     
     &__about {
-      position: relative;
+      // position: relative;
       top: 0px;
       z-index: -4;
       display: flex;
@@ -73,7 +73,7 @@ a {
       height: 100vh;
 
       &__content {
-        position: absolute;
+        position: fixed;
       }
     }
 
@@ -83,7 +83,7 @@ a {
       position: relative;
       top: 0px;
       align-items: center;
-      z-index: -3;
+      z-index: -2;
       width: 100%;
       height: 100vh;
 
@@ -96,20 +96,29 @@ a {
       }
 
       &__background {
-        // position: sticky;
+        position: sticky;
+        display: flex;
+        justify-content: center;
         background-color: green;
         height: 100%;
         width: 100%;
       }
 
       &__content {
-        position: absolute;
+        position: sticky;
+        display: flex;
+        justify-content: center;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        transform: translateY(100%);
       }
     }
 
     &__contact {
+      position: relative;
       display: flex;
-      position: sticky;
       z-index: -2;
       justify-content: center;
       background-color: yellow;
@@ -117,8 +126,8 @@ a {
       height: 100vh;
     }
 
-    &__content {
-        position: absolute;
-      }
+    // &__content {
+    //     position: fixed;
+    //   }
   }
 }
