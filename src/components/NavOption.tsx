@@ -9,9 +9,9 @@ function NavOption(props: Props) {
   const { option, setNavSelection } = props
 
   const scrollToElement = (id: string) => {
-    const element = document.getElementById(id);
+    const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
 

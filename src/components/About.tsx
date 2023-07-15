@@ -1,7 +1,9 @@
 function About() {
   return (
     <section className="section-container__about" id="about">
-      <h1>About!</h1>
+      <div className="section-container__about__content">
+        <h1>About!</h1>
+      </div>
     </section>
   )
 }
