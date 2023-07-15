@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import NavTitle from './NavTitle'
 import NavOption from './NavOption'
 
