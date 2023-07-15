@@ -1,3 +1,11 @@
+import NavOption from './NavOption'
+import NavTitle from './NavTitle'
+
+const navTitle = {
+  option: 'title',
+  display: ['Chris Swan', 'Fullstack Developer'],
+}
+
 const navOptions = [
   {
     option: 'about',
@@ -13,10 +21,10 @@ const navOptions = [
 function Nav() {
   return (
     <nav>
-      {navOptions.map((elem, i) => {
+      <NavTitle key={navTitle.option} title={navTitle} />
+      {navOptions.map((elem) => {
         const { option } = elem
-        console.log(option)
-        return <span key={`${option}`}>{option}</span>
+        return <NavOption key={option} option={option} />
       })}
     </nav>
   )
