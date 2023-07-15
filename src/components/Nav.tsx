@@ -1,5 +1,7 @@
-import NavOption from './NavOption'
+import { useState } from 'react'
+
 import NavTitle from './NavTitle'
+import NavOption from './NavOption'
 
 const navTitle = {
   option: 'title',
@@ -18,13 +20,25 @@ const navOptions = [
   },
 ]
 
-function Nav() {
+interface Props {
+  setNavSelection: React.Dispatch<React.SetStateAction<string>>
+}
+
+function Nav(props: Props) {
+  const { setNavSelection } = props
+
   return (
-    <nav>
+    <nav className="nav-container">
       <NavTitle key={navTitle.option} title={navTitle} />
       {navOptions.map((elem) => {
         const { option } = elem
-        return <NavOption key={option} option={option} />
+        return (
+          <NavOption
+            key={option}
+            option={option}
+            setNavSelection={setNavSelection}
+          />
+        )
       })}
     </nav>
   )

@@ -3,12 +3,9 @@
 
 :root {
   font-family: Tiempos Fine light, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  // font-family: $text-display;
   line-height: 1.5;
 
-  // color-scheme: light dark;
-  // color: rgba(255, 255, 255, 0.87);
-  // background-color: #242424;
+  background-color: $background-main;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,4 +14,30 @@
   -webkit-text-size-adjust: 100%;
 }
 
+a {
+  @include green-text;
+}
 
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+  
+  &__option {
+    padding: 0px 12px 0px 12px;
+  }
+
+  
+  #title {
+    padding: 0;
+    margin-right: auto;
+  } 
+}
+
+#vertical-text {
+  @include green-text;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+  position: relative;
+  left: -8px;
+}
