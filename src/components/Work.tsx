@@ -1,6 +1,6 @@
 function Work() {
   const handleMouseOver = () => {
-    console.log('Work Page!')
+    // console.log('Work Page!')
   }
 
   return (
