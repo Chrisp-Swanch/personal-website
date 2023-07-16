@@ -3,6 +3,7 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from '../context'
 import { defaultElement } from '../util'
+import AboutContent from './AboutContent'
 
 function About() {
   const [currentElement, setCurrentElement] = useState({})
@@ -39,9 +40,7 @@ function About() {
 
   return (
     <section ref={elementRef} className="section-container__about" id="about">
-      <div className="section-container__about__content">
-        <h1>About!</h1>
-      </div>
+      <AboutContent />
     </section>
   )
 }

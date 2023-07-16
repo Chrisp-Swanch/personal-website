@@ -22,6 +22,7 @@ a {
   @include green-text;
 }
 
+
 .nav-section {
   position: fixed;
   display: flexbox;
@@ -41,6 +42,10 @@ a {
   
   &__option {
     padding: 0px 12px 0px 12px;
+
+    :hover {
+      background-color: red;
+    }
   }
 
   
@@ -106,7 +111,18 @@ a {
 
       &__content {
         position: fixed;
-        @include fade-animation
+        top: 23%;
+        left: 25%;
+        width: 500px;
+        @include fade-animation;
+        // here's the styling for the content boxy bit!!
+        // background-color: red;
+        border-left: $text-main solid 1px;
+        padding-left: 10px;
+
+
+
+
       }
     }
 
@@ -125,14 +141,14 @@ a {
         top: -20vh;
         width: 100%;
         height: 145px;
-        background-image: linear-gradient(to bottom, transparent, green);
+        background-image: linear-gradient(to bottom, transparent, $background-main);
       }
 
       &__background {
         position: sticky;
         display: flex;
         justify-content: center;
-        background-color: green;
+        background-color: $background-main;
         height: 100%;
         width: 100%;
       }
