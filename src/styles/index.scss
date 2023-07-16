@@ -1,9 +1,14 @@
 @import './variables.scss';
-@import './fonts/tiempos-fine.scss';
+@import './fonts/tiempos.scss';
+@import './fonts/calibre.scss';
+
 
 :root {
-  font-family: Tiempos Fine light, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Tiempos Fine Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
   line-height: 1.5;
+  
+  --calibre-regular: Calibre Regular;
 
   background-color: $background-main;
 
@@ -21,7 +26,6 @@ body {
 a {
   @include green-text;
 }
-
 
 .nav-section {
   position: fixed;
@@ -42,10 +46,7 @@ a {
   
   &__option {
     padding: 0px 12px 0px 12px;
-
-    :hover {
-      background-color: red;
-    }
+    @include red-bg;
   }
 
   
@@ -86,6 +87,43 @@ a {
   }
 }
 
+#cv-button {
+  @include green-text;
+  margin-top: 18px;
+  padding: 0;
+  font-size: 0.86rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  text-decoration: underline;
+}
+
+#cv-button:hover {
+  background-color: red;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: start;
+  margin: 25px;
+  align-items: center;
+  margin-left: -1px;
+  margin-bottom: calc(16.512px - 6.77px);
+}
+
+.link-icon {
+  width: 32px;
+  aspect-ratio: 1/1;
+  padding: 0px 0px 0px 0px;
+
+  &__svg {
+    width: 28px;
+  }
+}
+
+.link-icon__svg:hover {
+  background-color: red;
+}
+
 .views-container {
   position: absolute;
   top: 0px;
@@ -98,6 +136,7 @@ a {
   z-index: -1;
   width: 100%;
   height: auto;
+  font-size: 0.86rem;
 
   .section-container {
     
@@ -117,6 +156,7 @@ a {
         @include fade-animation;
         // here's the styling for the content boxy bit!!
         // background-color: red;
+        font-family: var(--calibre-regular);
         border-left: $text-main solid 1px;
         padding-left: 10px;
 

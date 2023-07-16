@@ -1,9 +1,7 @@
-@import './fonts/tiempos-fine.scss';
-
 $page-padding: 20px;
 
 $background-main: rgb(248, 241, 226);
-$accent-green: rgba(3, 33, 3, 0.92);
+$accent-green: #032103eb;
 
 $text-main: rgba(0, 0, 0, 0.92);
 
@@ -11,6 +9,12 @@ $text-main: rgba(0, 0, 0, 0.92);
 @mixin green-text {
   text-decoration: none;
   color: $accent-green;
+}
+
+@mixin red-bg {
+  :hover {
+    background-color: red;
+  }
 }
 
 @mixin page-padding {
