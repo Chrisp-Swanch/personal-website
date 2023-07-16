@@ -39,9 +39,9 @@ function About() {
 
   return (
     <section ref={elementRef} className="section-container__about" id="about">
-      {/* <div className="section-container__about__content">
+      <div className="section-container__about__content">
         <h1>About!</h1>
-      </div> */}
+      </div>
     </section>
   )
 }

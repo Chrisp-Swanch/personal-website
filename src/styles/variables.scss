@@ -16,3 +16,16 @@ $text-main: rgba(0, 0, 0, 0.92);
 @mixin page-padding {
   padding: $page-padding;
 }
+
+@mixin fade-animation {
+  animation: fade 1s;
+  
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
