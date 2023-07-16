@@ -5,11 +5,11 @@ import Views from './Views'
 import { Context, ContextProps } from '../context'
 
 function App() {
-  const [navSelection, setNavSelection] = useState('about')
+  const [navSelection, setNavSelection] = useState('about' as string)
 
   const contextValue: ContextProps = {
     navSelection,
-    setNavSelection,
+    setNavSelection
   }
 
   return (
