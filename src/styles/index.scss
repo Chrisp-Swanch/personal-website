@@ -152,7 +152,8 @@ a {
         position: fixed;
         top: 23%;
         left: 25%;
-        width: 500px;
+        max-width: 420px;
+        min-width: 200px;
         @include fade-animation;
         // here's the styling for the content boxy bit!!
         // background-color: red;

@@ -9,7 +9,7 @@ function AboutContent() {
     <div className="section-container__about__content">
       {/* <h1>About!</h1> */}
       <p>
-        I&apos;m Chris, a developer based in Pōneke / Wellington, New Zealand. A wise person once said, a mouse runs fastest when moving towards a reward, and away from a threat.
+        I&apos;m Chris, a developer based in Pōneke / Wellington, New Zealand. A wise person once said, a mouse runs fastest when moving both towards a reward, and away from a threat.
       </p>
       <p>I&apos;d love to work on your next project with you!</p>
 
