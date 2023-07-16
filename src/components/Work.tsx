@@ -1,15 +1,48 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import { useState, useRef, useEffect, useContext } from "react"
+import { defaultElement } from "../util"
+import { Context } from "../context"
+
 function Work() {
-  const handleMouseOver = () => {
-    // console.log('Work Page!')
-  }
+  const [currentElement, setCurrentElement] = useState({})
+  const { setNavSelection } = useContext(Context)
+
+  const elementRef = useRef(null)
+  const { current } = elementRef
+
+  useEffect(() => {
+    setCurrentElement(defaultElement)
+
+    const handleScroll = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        const { id } = entry.target
+        if (entry.isIntersecting) setNavSelection(id)
+      })
+    }
+
+    const observer = new IntersectionObserver(handleScroll, {
+      root: null,
+      threshold: 0.5,
+    })
+
+    if (current) {
+      observer.observe(current)
+    }
+
+    return () => {
+      if (current) {
+        observer.unobserve(current)
+      }
+    }
+  }, [currentElement])
 
   return (
     <>
       <section className="section-container__work">
         <div className="section-container__work__gradient"></div>
         <div
-          onMouseOver={handleMouseOver}
-          onFocus={handleMouseOver}
+          ref={elementRef}
           className="section-container__work__background"
           id="work"
         >

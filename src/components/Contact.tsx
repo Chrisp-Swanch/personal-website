@@ -1,17 +1,44 @@
-// import { useEffect, useRef } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import { useState, useRef, useEffect, useContext } from "react"
+import { defaultElement } from "../util"
+import { Context } from "../context"
 
 function Contact() {
+  const [currentElement, setCurrentElement] = useState({})
+  const { setNavSelection } = useContext(Context)
 
-  // trying to make seeing the thing change the NavSelectedThing
-  // use redux? redux toolkit? react context?
+  const elementRef = useRef(null)
+  const { current } = elementRef
 
+  useEffect(() => {
+    setCurrentElement(defaultElement)
 
-  const handleMouseOver = () => {
-    // console.log('Contact Page!')
-  } 
-  
+    const handleScroll = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        const { id } = entry.target
+        if (entry.isIntersecting) setNavSelection(id)
+      })
+    }
+
+    const observer = new IntersectionObserver(handleScroll, {
+      root: null,
+      threshold: 0.5,
+    })
+
+    if (current) {
+      observer.observe(current)
+    }
+
+    return () => {
+      if (current) {
+        observer.unobserve(current)
+      }
+    }
+  }, [currentElement])
+
   return (
-    <section onMouseOver={handleMouseOver} onFocus={handleMouseOver} className="section-container__contact" id="contact">
+    <section ref={elementRef} className="section-container__contact" id="contact">
       <div className="section-container__contact__content">
         <h1>Contact!</h1>
       </div>

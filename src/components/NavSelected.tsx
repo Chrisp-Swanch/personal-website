@@ -1,13 +1,25 @@
+import { useContext, useEffect, useState } from 'react'
+import { Context } from '../context'
+
 interface Props {
-  selection: string
+  id: string
 }
 
 function NavSelected(props: Props) {
-  const { selection } = props
+  const { id } = props
+  const { navSelection } = useContext(Context)
+  const [headerText, setHeaderText] = useState('')
+
+  useEffect(() => {
+    setHeaderText(id)
+  }, [navSelection, id])
+
   return (
     <div className="vertical-text">
       <p>-</p>
-      <span className="vertical-text__selection"><h2>{selection}</h2></span>
+      <span className="vertical-text__selection">
+        <h2>{headerText}</h2>
+      </span>
     </div>
   )
 }

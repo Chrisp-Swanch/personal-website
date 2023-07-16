@@ -7,7 +7,7 @@ interface Props {
 }
 
 function NavOption(props: Props) {
-  const { navSelection, setNavSelection } = useContext(Context)
+  const { setNavSelection } = useContext(Context)
   const { option } = props
 
   const scrollToElement = (id: string) => {
@@ -18,9 +18,8 @@ function NavOption(props: Props) {
   }
 
   const handleClick = () => {
+    setNavSelection('')
     scrollToElement(option)
-    if (navSelection === option) return
-    setNavSelection(option)
   }
 
   return (
