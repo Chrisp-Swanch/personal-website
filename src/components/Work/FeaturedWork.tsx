@@ -10,7 +10,13 @@ function FeaturedWork(props: Props) {
   const { id, name } = feature
 
   return (
-      <h1>This is a feature bit for {name}</h1>
+    <>
+      {selection === id && (
+        <div className="section-container__work__feature-container__feature">
+          <h1>This is a feature bit for {name}</h1>
+        </div>
+      )}
+    </>
   )
 }
 

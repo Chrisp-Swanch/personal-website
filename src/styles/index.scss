@@ -198,8 +198,8 @@ a {
         grid-template-columns: 1fr 2.9fr;
         justify-content: center;
         top: 0;
-        max-width: 1080px;
-        aspect-ratio: 16/9;
+        max-width: 80vw;
+        max-height: 70vh;
         // background-color: orange;
         transform: translateY(22%);
         @include fade-animation;
@@ -211,6 +211,7 @@ a {
         @include fade-animation;
         display: flex;
         flex-direction: column;
+        max-width: 100%;
         
         button {
           display: flex;
@@ -250,9 +251,12 @@ a {
       // feature section!!
       &__feature-container {
         font-family: var(--calibre-regular);
-        // background-color: rgb(186, 221, 186);
         @include page-padding;
         @include vertical-border;
+
+        &__feature {
+          @include fade-animation;
+        }
       }
 
     }

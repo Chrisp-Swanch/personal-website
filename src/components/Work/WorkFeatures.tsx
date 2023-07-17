@@ -17,11 +17,11 @@ function WorkFeatures(props: Props) {
       <div className="section-container__work__feature-container">
         {features.map((feature: Feature) => {
           return (
-            <FeaturedWork
-              key={feature.id}
-              feature={feature}
-              selection={selection}
-            />
+              <FeaturedWork
+                key={feature.id}
+                feature={feature}
+                selection={selection}
+              />
           )
         })}
       </div>
