@@ -17,8 +17,8 @@ function App() {
       <Context.Provider value={contextValue}>
         <section className="nav-section">
           <Nav />
-          <NavSelected key={navSelection} id={navSelection} />
         </section>
+          <NavSelected key={navSelection} id={navSelection} />
         <Views />
       </Context.Provider>
     </>

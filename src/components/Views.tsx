@@ -1,5 +1,5 @@
 import About from './About'
-import Work from './Work'
+import Work from './Work/Work'
 import Contact from './Contact'
 
 function Views() {

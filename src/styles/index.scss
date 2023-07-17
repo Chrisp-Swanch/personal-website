@@ -8,7 +8,10 @@
   font-size: 1.2rem;
   line-height: 1.5;
   
+
+  --tiempos-semibold: Tiempos Fine Semibold;
   --calibre-regular: Calibre Regular;
+  --calibre-bold: Calibre Bold;
 
   background-color: $background-main;
 
@@ -21,6 +24,10 @@
 
 body {
   padding: $page-padding;
+}
+
+h1 {
+  margin: 0px;
 }
 
 a {
@@ -53,10 +60,6 @@ a {
   #title {
     padding: 0;
     margin-right: auto;
-
-    h1 {
-      margin: 0px;
-    }
   } 
 }
 
@@ -149,21 +152,16 @@ a {
       height: 100vh;
 
       &__content {
+        // here's the styling for the content boxy bit
         position: fixed;
         top: 23%;
         left: 25%;
         max-width: 420px;
         min-width: 200px;
         @include fade-animation;
-        // here's the styling for the content boxy bit!!
-        // background-color: red;
+        @include vertical-border;
         font-family: var(--calibre-regular);
-        border-left: $text-main solid 1px;
         padding-left: 10px;
-
-
-
-
       }
     }
 
@@ -196,16 +194,74 @@ a {
 
       &__content {
         position: sticky;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 2.9fr;
         justify-content: center;
         top: 0;
-        width: 100px;
-        height: 100px;
-        background-color: orange;
-        transform: translateY(100%);
+        max-width: 1080px;
+        aspect-ratio: 16/9;
+        // background-color: orange;
+        transform: translateY(22%);
         @include fade-animation;
       }
+      
+      // actual content section bits!
+      &__sidebar {
+        @include page-padding;
+        @include fade-animation;
+        display: flex;
+        flex-direction: column;
+        
+        button {
+          display: flex;
+          justify-content: right;
+          color: $accent-green-translucent;
+          font-size: 1.4em;
+          background-color: rgba(0, 0, 0, 0);
+          margin-bottom: 7px;
+          border: 0;
+          cursor: pointer;
+          font-family: var(--tiempos-semibold);
+          padding: 0;
+          margin-left: auto;
+          width: fit-content;
+          height: fit-content;
+        
+            
+            h3 {
+              @include fade-animation;
+              padding-top: 0px;
+              margin: 0px;
+              cursor: pointer;
+              color: $accent-green;
+              font-size: inherit;
+              font-family: inherit;
+              font-weight: inherit;
+            }
+          }
+          
+          button:hover {
+            background-color: red;
+          }
+          
+      }
+
+
+      // feature section!!
+      &__feature-container {
+        font-family: var(--calibre-regular);
+        // background-color: rgb(186, 221, 186);
+        @include page-padding;
+        @include vertical-border;
+      }
+
     }
+
+
+
+
+
+
 
     &__contact {
       position: relative;

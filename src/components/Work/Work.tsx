@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useState, useRef, useEffect, useContext } from "react"
-import { defaultElement } from "../util"
-import { Context } from "../context"
+import { useState, useRef, useEffect, useContext } from 'react'
+import { defaultElement } from '../../util'
+import { Context } from '../../context'
+import WorkContent from './WorkContent'
 
 function Work() {
   const [currentElement, setCurrentElement] = useState({})
@@ -46,9 +47,7 @@ function Work() {
           className="section-container__work__background"
           id="work"
         >
-          <div className="section-container__work__content">
-            <h1>Work!</h1>
-          </div>
+          <WorkContent />
         </div>
       </section>
     </>

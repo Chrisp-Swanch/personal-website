@@ -2,6 +2,7 @@ $page-padding: 20px;
 
 $background-main: rgb(248, 241, 226);
 $accent-green: #032103eb;
+$accent-green-translucent: #03210350;
 
 $text-main: rgba(0, 0, 0, 0.92);
 
@@ -32,4 +33,8 @@ $text-main: rgba(0, 0, 0, 0.92);
       opacity: 1;
     }
   }
+}
+
+@mixin vertical-border {
+  border-left: $text-main solid 1px;
 }
