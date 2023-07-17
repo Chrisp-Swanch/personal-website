@@ -1,7 +1,8 @@
 // import Feature from "./Feature"
 import { Dispatch, SetStateAction } from 'react'
 import { Feature } from '../../../models/Feature'
-import FeaturedWork from './FeaturedWork'
+import GreyGhost from './GreyGhost'
+import ParkingTix from './ParkingTix'
 
 interface Props {
   features: Feature[]
@@ -10,20 +11,13 @@ interface Props {
 }
 
 function WorkFeatures(props: Props) {
-  const { features, selection } = props
+  const { features, selection, setSelection } = props
 
   return (
     <>
       <div className="section-container__work__feature-container">
-        {features.map((feature: Feature) => {
-          return (
-              <FeaturedWork
-                key={feature.id}
-                feature={feature}
-                selection={selection}
-              />
-          )
-        })}
+        <ParkingTix feature={features[0]} selection={selection} setSelection={setSelection}/>
+        <GreyGhost feature={features[1]} selection={selection} setSelection={setSelection}/>
       </div>
     </>
   )

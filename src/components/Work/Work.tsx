@@ -38,6 +38,7 @@ function Work() {
     }
   }, [currentElement])
 
+  // conditional render to only show if work section is in view?
   return (
     <>
       <section className="section-container__work">
