@@ -5,7 +5,7 @@
 
 :root {
   font-family: Tiempos Fine Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   line-height: 1.5;
   
   --tiempos-fine-regular: Tiempos Fine Regular;
@@ -36,6 +36,7 @@ a {
 }
 
 .nav-section {
+  pointer-events: none;
   position: fixed;
   display: flexbox;
   top: 0px;
@@ -48,6 +49,7 @@ a {
   @include page-padding;
   display: flex;
   position: relative;
+  align-items: center;
   top: 0;
   left: 0;
   justify-content: flex-end;
@@ -55,10 +57,12 @@ a {
   &__option {
     padding: 0px 12px 0px 12px;
     @include red-bg;
+    pointer-events: auto;
   }
 
   
   #title {
+    pointer-events: auto;
     padding: 0;
     margin-right: auto;
   } 
@@ -67,6 +71,7 @@ a {
 .vertical-text {
   @include green-text;
   padding-left: $page-padding;
+  padding-top: 2px;
   margin-top: calc($page-padding * -0.88);
   display: flex;
   align-items: center;
@@ -102,6 +107,24 @@ a {
 }
 
 #cv-button:hover {
+  background-color: red;
+}
+
+#send-button {
+  @include green-text;
+  margin-top: 5px;
+  padding: 0;
+  font-size: 0.86rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: auto;
+  width: fit-content;
+  height: fit-content;
+}
+
+#send-button:hover {
   background-color: red;
 }
 
@@ -318,7 +341,83 @@ a {
 
       &__content {
         @include fade-animation;
+        position: relative;
+        top: 15%;
+        width: fit-content;
+        height: fit-content;
+
+        form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .field {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            font-family: var(--calibre-regular);
+            margin-bottom: 5px;
+            width: 65vw;
+
+            label {
+              position: relative;
+              margin: 0;
+              padding: 0;
+              top: 5px;
+            }
+
+            input {
+              background-color: rgba(0, 0, 0, 0);
+              border: 1px solid black;
+              border-radius: 4px;
+              padding: 5px;
+
+            }
+
+            input:-webkit-autofill {
+              /* Reset the background color and other styles */
+              background-color: transparent;
+              // box-shadow: 0 0 0px 1000px white inset; /* Use a large box shadow to override the autofill background */
+              transition: background-color 5000s ease-in-out 1s; /* Set a long transition duration to prevent abrupt changes */
+            }
+
+            textarea {
+              font-family: var(--calibre-regular);
+              font-size: inherit;
+              background-color: rgba(0, 0, 0, 0);
+              border: 1px solid black;
+              border-radius: 4px;
+              padding: 7px;
+              height: 20vh;
+            }
+
+            textarea::-webkit-scrollbar {
+              width: 4px; /* Adjust the width of the scrollbar */
+            }
+            
+            textarea::-webkit-scrollbar-track {
+              background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track */
+      
+            }
+      
+            textarea::-webkit-scrollbar-corner {
+              background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track corner */
+            }
+            
+            textarea::-webkit-scrollbar-thumb {
+              background-color: $accent-green-translucent /* Change the color of the scrollbar thumb */
+            }
+            
+            textarea::-webkit-scrollbar-thumb:hover {
+              background-color: $accent-green; /* Change the color of the scrollbar thumb on hover */
+            }
+
+          }
+        }
       }
     }
+    
   }
+  
 }

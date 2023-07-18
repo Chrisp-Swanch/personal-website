@@ -32,7 +32,9 @@ function ContactForm() {
     }
   }
 
-  const handleChange = (evt: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (
+    evt: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { value, name } = evt.target
     setEmailData({
       ...emailData,
@@ -42,16 +44,20 @@ function ContactForm() {
 
   return (
     <div className="section-container__contact__content">
-      <h1>Contact!</h1>
-
       <form onSubmit={sendEmail}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" onChange={handleChange} />
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" onChange={handleChange} />
-        <label htmlFor="message">Message</label>
-        <textarea name="message" id="message" onChange={handleChange} />
-        <input type="submit" value="Send" />
+        <div className="field">
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" id="name" onChange={handleChange} />
+        </div>
+        <div className="field">
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" id="email" onChange={handleChange} />
+        </div>
+        <div className="field">
+          <label htmlFor="message">Message</label>
+          <textarea name="message" id="message" onChange={handleChange} />
+        </div>
+        <button type="submit" id="send-button">Send</button>
       </form>
     </div>
   )
