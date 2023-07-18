@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Option } from './WorkContent'
+import { Feature } from "../../../models/Feature"
 
 interface Props {
-  option: Option
+  option: Feature
   selection: number
   setSelection: Dispatch<SetStateAction<number>>
 }
