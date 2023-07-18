@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useState, useRef, useEffect, useContext } from "react"
-import { defaultElement } from "../util"
-import { Context } from "../context"
+import { useState, useRef, useEffect, useContext } from 'react'
+import { defaultElement } from '../../util'
+import { Context } from '../../context'
+import ContactForm from './ContactForm'
 
 function Contact() {
   const [currentElement, setCurrentElement] = useState({})
@@ -38,13 +39,14 @@ function Contact() {
   }, [currentElement])
 
   return (
-    <section ref={elementRef} className="section-container__contact" id="contact">
-      <div className="section-container__contact__content">
-        <h1>Contact!</h1>
-      </div>
+    <section
+      ref={elementRef}
+      className="section-container__contact"
+      id="contact"
+    >
+      <ContactForm />
     </section>
   )
 }
 
 export default Contact
-
