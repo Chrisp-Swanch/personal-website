@@ -21,7 +21,10 @@ function ParkingTix(props: Props) {
   return (
     <>
       {selection === id && (
-        <div className="section-container__work__feature-container__feature" id={name}>
+        <div
+          className="section-container__work__feature-container__feature"
+          id={name}
+        >
           <h4>
             {name} / {date}
           </h4>
@@ -33,7 +36,11 @@ function ParkingTix(props: Props) {
           <p>{paragraphs[3]}</p>
           <p>{paragraphs[4]}</p>
           <p className="italics">
-            {paragraphs[5]} <Link to={link} >here</Link>.
+            {paragraphs[5]}{' '}
+            <Link to={link} target="_blank">
+              here
+            </Link>
+            .
           </p>
         </div>
       )}

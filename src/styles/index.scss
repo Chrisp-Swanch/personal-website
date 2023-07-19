@@ -7,7 +7,8 @@
   font-family: Tiempos Fine Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
   line-height: 1.5;
-  
+  scroll-snap-type: y mandatory;
+
   --tiempos-fine-regular: Tiempos Fine Regular;
   --tiempos-semibold: Tiempos Fine Semibold;
   --calibre-regular: Calibre Regular;
@@ -53,19 +54,19 @@ a {
   top: 0;
   left: 0;
   justify-content: flex-end;
-  
+
   &__option {
     padding: 0px 12px 0px 12px;
     @include red-bg;
     pointer-events: auto;
   }
 
-  
+
   #title {
     pointer-events: auto;
     padding: 0;
     margin-right: auto;
-  } 
+  }
 }
 
 .vertical-text {
@@ -106,7 +107,7 @@ a {
   text-decoration: underline;
 }
 
-#cv-button:hover {
+#cv-button:active {
   background-color: red;
 }
 
@@ -124,7 +125,7 @@ a {
   height: fit-content;
 }
 
-#send-button:hover {
+#send-button:active {
   background-color: red;
 }
 
@@ -147,7 +148,7 @@ a {
   }
 }
 
-.link-icon__svg:hover {
+.link-icon__svg:active {
   background-color: red;
 }
 
@@ -166,7 +167,7 @@ a {
   font-size: 0.86rem;
 
   .section-container {
-    
+
     &__about {
       top: 0px;
       z-index: -4;
@@ -174,6 +175,8 @@ a {
       justify-content: center;
       width: 100%;
       height: 100vh;
+      min-height: fill-available;
+      scroll-snap-align: start;
 
       &__content {
         // here's the styling for the content boxy bit
@@ -195,48 +198,43 @@ a {
       position: relative;
       top: 0px;
       align-items: center;
+      // justify-content: center;
       z-index: -2;
       width: 100%;
       height: 100vh;
+      min-height: fill-available;
+      scroll-snap-align: start;
+      background-color: $background-main;
+      // background-color: rgb(249, 178, 178);
 
       &__gradient {
         position: absolute;
-        top: -20vh;
         width: 100%;
-        height: 145px;
+        height: 10vh;
+        top: calc(10vh * -1);
         background-image: linear-gradient(to bottom, transparent, $background-main);
       }
 
-      &__background {
-        position: sticky;
-        display: flex;
-        justify-content: center;
-        background-color: $background-main;
-        height: 100%;
-        width: 100%;
-      }
-
       &__content {
-        position: sticky;
         display: grid;
-        grid-template-columns: 1fr 2.9fr;
+        grid-template-columns: auto 2.9fr;
         justify-content: center;
-        top: 0;
+        position: relative;
+        top: 14vh;
         max-width: 80vw;
-        max-height: 70vh;
+        max-height: 70%;
         // background-color: orange;
-        transform: translateY(22%);
         @include fade-animation;
       }
-      
+
       // actual content section bits!
       &__sidebar {
         @include page-padding;
         @include fade-animation;
         display: flex;
         flex-direction: column;
-        max-width: 100%;
-        
+        width: fit-content;
+
         button {
           display: flex;
           justify-content: right;
@@ -251,8 +249,8 @@ a {
           margin-left: auto;
           width: fit-content;
           height: fit-content;
-        
-            
+
+
             h3 {
               @include fade-animation;
               padding-top: 0px;
@@ -264,20 +262,20 @@ a {
               font-weight: inherit;
             }
           }
-          
-          button:hover {
+
+          button:active {
             background-color: red;
           }
-          
+
       }
 
 
       // feature section!!
       &__feature-container {
         font-family: var(--calibre-regular);
+        overflow: scroll;
         @include page-padding;
         @include vertical-border;
-        overflow: scroll;
 
         &__feature {
           @include fade-animation;
@@ -296,7 +294,7 @@ a {
             text-decoration: underline;
           }
 
-          a:hover {
+          a:active {
             background-color: red;
           }
 
@@ -309,7 +307,7 @@ a {
       &__feature-container::-webkit-scrollbar {
         width: 4px; /* Adjust the width of the scrollbar */
       }
-      
+
       &__feature-container::-webkit-scrollbar-track {
         background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track */
 
@@ -318,11 +316,11 @@ a {
       &__feature-container::-webkit-scrollbar-corner {
         background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track corner */
       }
-      
+
       &__feature-container::-webkit-scrollbar-thumb {
         background-color: $accent-green-translucent /* Change the color of the scrollbar thumb */
       }
-      
+
       &__feature-container::-webkit-scrollbar-thumb:hover {
         background-color: $accent-green; /* Change the color of the scrollbar thumb on hover */
       }
@@ -338,6 +336,8 @@ a {
       background-color: $background-alt;
       width: 100%;
       height: 100vh;
+      min-height: fill-available;
+      scroll-snap-align: start;
 
       &__content {
         @include fade-animation;
@@ -395,20 +395,20 @@ a {
             textarea::-webkit-scrollbar {
               width: 4px; /* Adjust the width of the scrollbar */
             }
-            
+
             textarea::-webkit-scrollbar-track {
               background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track */
-      
+
             }
-      
+
             textarea::-webkit-scrollbar-corner {
               background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track corner */
             }
-            
+
             textarea::-webkit-scrollbar-thumb {
               background-color: $accent-green-translucent /* Change the color of the scrollbar thumb */
             }
-            
+
             textarea::-webkit-scrollbar-thumb:hover {
               background-color: $accent-green; /* Change the color of the scrollbar thumb on hover */
             }
@@ -417,7 +417,7 @@ a {
         }
       }
     }
-    
+
   }
-  
+
 }

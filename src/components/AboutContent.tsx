@@ -7,7 +7,6 @@ function AboutContent() {
 
   return (
     <div className="section-container__about__content">
-      {/* <h1>About!</h1> */}
       <p>
         I&apos;m Chris, a developer based in Pōneke / Wellington, New Zealand. A wise person once said, a mouse runs fastest when moving both towards a reward, and away from a threat.
       </p>

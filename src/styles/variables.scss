@@ -14,7 +14,7 @@ $text-main: rgba(0, 0, 0, 0.92);
 }
 
 @mixin red-bg {
-  :hover {
+  :active {
     background-color: red;
   }
 }

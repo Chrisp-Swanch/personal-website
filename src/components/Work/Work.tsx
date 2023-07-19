@@ -41,15 +41,9 @@ function Work() {
   // conditional render to only show if work section is in view?
   return (
     <>
-      <section className="section-container__work">
+      <section ref={elementRef} id="work" className="section-container__work">
         <div className="section-container__work__gradient"></div>
-        <div
-          ref={elementRef}
-          className="section-container__work__background"
-          id="work"
-        >
-          <WorkContent />
-        </div>
+        <WorkContent />
       </section>
     </>
   )

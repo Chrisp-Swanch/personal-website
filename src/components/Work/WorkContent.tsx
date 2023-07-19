@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useEffect, useState } from 'react'
 
 import WorkSideBar from './WorkSideBar'
@@ -22,7 +23,7 @@ const features = [
       '/images/parking-tix_1.png',
       '/images/parking-tix_2.png',
     ],
-    links: ['https://github.com/Chrisp-Swanch/parking-tix']
+    links: ['https://github.com/Chrisp-Swanch/parking-tix'],
   },
   {
     id: 2,
@@ -34,7 +35,7 @@ const features = [
       'This is a solo project, made during my final year at unviersity.',
     ],
     images: ['/images/grey-ghost_0.jpeg', '/images/grey-ghost_1.jpeg'],
-    links: []
+    links: [],
   },
 ] as Feature[]
 
