@@ -1,16 +1,22 @@
+import { useEffect, useState } from 'react'
+import { Context, ContextProps } from '../context'
+import { scrollToElement } from '../util'
+
 import NavContainer from './Nav/NavContainer'
 import VerticalText from './Nav/VerticalText'
-import { useState } from 'react'
 import Views from './Views'
-import { Context, ContextProps } from '../context'
 
 function App() {
-  const [navSelection, setNavSelection] = useState('about' as string)
+  const [navSelection, setNavSelection] = useState('about')
 
   const contextValue: ContextProps = {
     navSelection,
     setNavSelection,
   }
+
+  useEffect(() => {
+    scrollToElement('about')
+  }, [])
 
   return (
     <>
