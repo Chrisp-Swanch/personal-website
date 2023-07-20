@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Feature } from '../../../models/Feature'
-// import { scrollIntoParentView } from '../../util'
 
 interface Props {
   feature: Feature
@@ -15,7 +14,6 @@ function ParkingTix(props: Props) {
   const link = links[0]
 
   useEffect(() => {
-    // scrollIntoParentView(name)
   }, [selection])
 
   return (

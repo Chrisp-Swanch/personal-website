@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { Feature } from '../../../models/Feature'
-// import { scrollIntoParentView } from '../../util'
 
 interface Props {
   feature: Feature
@@ -13,7 +12,6 @@ function GreyGhost(props: Props) {
   const { id, name, date, paragraphs, images } = feature
 
   useEffect(() => {
-    // scrollIntoParentView(name)
   }, [selection])
 
   return (

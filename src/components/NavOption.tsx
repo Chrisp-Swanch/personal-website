@@ -20,7 +20,6 @@ function NavOption(props: Props) {
   }
 
   const handleClick = () => {
-    // setNavSelection('')
     scrollToElement(option)
   }
 
