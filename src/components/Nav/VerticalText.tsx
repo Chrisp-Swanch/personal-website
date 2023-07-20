@@ -8,17 +8,18 @@ interface Props {
 function VerticalText(props: Props) {
   const { id } = props
   const { navSelection } = useContext(Context)
-  const [headerText, setHeaderText] = useState('')
+  const [verticalText, setVerticalText] = useState('')
 
   useEffect(() => {
-    setHeaderText(id)
+    setVerticalText(id)
+    console.log(navSelection)
   }, [navSelection, id])
 
   return (
     <div className="vertical-text">
       <p>-</p>
       <span className="vertical-text__selection">
-        <h2>{headerText}</h2>
+        <h2>{verticalText}</h2>
       </span>
     </div>
   )
