@@ -147,6 +147,20 @@ a {
   cursor: pointer;
 }
 
+#sent-message {
+  @include green-text;
+  margin-top: 5px;
+  padding: 0;
+  font-size: 0.86rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-family: Arial;
+  padding: 0;
+  margin-left: auto;
+  width: fit-content;
+  height: fit-content;
+}
+
 .icons-container {
   display: flex;
   justify-content: start;

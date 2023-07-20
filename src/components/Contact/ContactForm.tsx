@@ -4,6 +4,7 @@ import Email from '../../../models/Email'
 import { checkEmailForm } from '../../util'
 
 function ContactForm() {
+  const [emailSent, setEmailSent] = useState(false as boolean)
   const [emailData, setEmailData] = useState({} as Email)
 
   const emailJsConfig = {
@@ -19,13 +20,15 @@ function ContactForm() {
 
     if (validation.pass) {
       const form = evt.target as HTMLFormElement
+      form.reset()
+      setEmailSent(true)
       emailjs
         .sendForm(serviceId, templateId, form, publicKey)
-        .then((result) => {
-          console.log(result.text)
+        .then(() => {
+          return
         })
         .catch((error) => {
-          console.log(error.text)
+          console.error(error.text)
         })
     } else {
       alert(validation.error)
@@ -57,7 +60,17 @@ function ContactForm() {
           <label htmlFor="message">Message</label>
           <textarea name="message" id="message" onChange={handleChange} />
         </div>
-        <button type="submit" id="send-button">Send</button>
+
+        {!emailSent && (
+          <button type="submit" id="send-button">
+            Send
+          </button>
+        )}
+        {emailSent && (
+          <p id="sent-message">
+            Thank you!
+          </p>
+        )}
       </form>
     </div>
   )
