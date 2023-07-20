@@ -1,5 +1,13 @@
 import Email from '../models/Email'
 
+// Scroll to a given html section
+export const scrollToElement = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+
 // Type for the checkEmailForm function return
 type CheckResult = {
   pass: boolean

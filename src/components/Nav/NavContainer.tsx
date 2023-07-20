@@ -1,8 +1,7 @@
-import NavTitle from './NavLogo'
+import NavLogo from './NavLogo'
 import NavOption from './NavOption'
 
-const navTitle = {
-  option: 'title',
+const logo = {
   display: ['Chris Swan', 'Fullstack Developer'],
 }
 
@@ -19,10 +18,11 @@ const navOptions = [
 ]
 
 function Nav() {
+  const { display } = logo
 
   return (
     <nav className="nav-container">
-      <NavTitle key={navTitle.option} title={navTitle} />
+      <NavLogo key="logo" display={display} />
       {navOptions.map((elem) => {
         const { option } = elem
         return (

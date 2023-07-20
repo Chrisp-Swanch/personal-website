@@ -1,20 +1,22 @@
-import { Link } from 'react-router-dom'
-
-type navElem = {
-  option: string
+import { scrollToElement } from "../../util"
+interface Props {
   display: string[]
 }
 
-interface Props {
-  title: navElem
-}
-
 function NavLogo(props: Props) {
-  const { display } = props.title
+  const { display } = props
+
+  const handleClick = () => {
+    scrollToElement('about')
+  }
 
   return (
-    <span className="nav__option" id="title">
-      <Link to="#"><h1>{display[0]} | {display[1]}</h1></Link>
+    <span className="nav__option" id="logo">
+      <button onClick={handleClick}>
+        <h1>
+          {display[0]} | {display[1]}
+        </h1>
+      </button>
     </span>
   )
 }

@@ -73,10 +73,23 @@ a {
 
   }
 
-  #title {
+  #logo {
     pointer-events: auto;
     padding: 0;
     margin-right: auto;
+
+    button {
+      @include green-text;
+      font-family: var(--tiempos-fine-regular);
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      width: fit-content;
+      height: fit-content;
+    }
   }
 }
 
@@ -116,10 +129,7 @@ a {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   text-decoration: underline;
-}
-
-#cv-button:active {
-  background-color: red;
+  cursor: pointer;
 }
 
 #send-button {
@@ -135,10 +145,6 @@ a {
   width: fit-content;
   height: fit-content;
   cursor: pointer;
-}
-
-#send-button:active {
-  background-color: red;
 }
 
 .icons-container {
@@ -158,10 +164,6 @@ a {
   &__svg {
     width: 28px;
   }
-}
-
-.link-icon__svg:active {
-  background-color: red;
 }
 
 .views-container {
@@ -191,7 +193,6 @@ a {
       scroll-snap-align: start;
 
       &__content {
-        // here's the styling for the content boxy bit
         position: fixed;
         top: 23%;
         left: 25%;
@@ -210,14 +211,12 @@ a {
       position: relative;
       top: 0px;
       align-items: center;
-      // justify-content: center;
       z-index: -2;
       width: 100%;
       height: 100vh;
       min-height: fill-available;
       scroll-snap-align: start;
       background-color: $background-main;
-      // background-color: rgb(249, 178, 178);
 
       &__gradient {
         position: absolute;
@@ -235,11 +234,9 @@ a {
         top: 14vh;
         max-width: 80vw;
         max-height: 70%;
-        // background-color: orange;
         @include fade-animation;
       }
 
-      // actual content section bits!
       &__sidebar {
         @include page-padding;
         @include fade-animation;
@@ -274,15 +271,8 @@ a {
               font-weight: inherit;
             }
           }
-
-          button:active {
-            background-color: red;
-          }
-
       }
 
-
-      // feature section!!
       &__feature-container {
         font-family: var(--calibre-regular);
         overflow: scroll;
@@ -306,10 +296,6 @@ a {
             text-decoration: underline;
           }
 
-          a:active {
-            background-color: red;
-          }
-
           img {
             max-width: 100%;
           }
@@ -317,29 +303,28 @@ a {
       }
 
       &__feature-container::-webkit-scrollbar {
-        width: 4px; /* Adjust the width of the scrollbar */
+        width: 4px;
       }
 
       &__feature-container::-webkit-scrollbar-track {
-        background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track */
+        background-color: rgba(0, 0, 0, 0);
 
       }
 
       &__feature-container::-webkit-scrollbar-corner {
-        background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track corner */
+        background-color: rgba(0, 0, 0, 0);
       }
 
       &__feature-container::-webkit-scrollbar-thumb {
-        background-color: $accent-green-translucent /* Change the color of the scrollbar thumb */
+        background-color: $accent-green-translucent;
       }
 
       &__feature-container::-webkit-scrollbar-thumb:hover {
-        background-color: $accent-green; /* Change the color of the scrollbar thumb on hover */
+        background-color: $accent-green;
       }
 
     }
 
-    // Contact page!!!
     &__contact {
       position: relative;
       display: flex;
@@ -388,10 +373,8 @@ a {
             }
 
             input:-webkit-autofill {
-              /* Reset the background color and other styles */
               background-color: transparent;
-              // box-shadow: 0 0 0px 1000px white inset; /* Use a large box shadow to override the autofill background */
-              transition: background-color 5000s ease-in-out 1s; /* Set a long transition duration to prevent abrupt changes */
+              transition: background-color 5000s ease-in-out 1s;
             }
 
             textarea {
@@ -405,24 +388,24 @@ a {
             }
 
             textarea::-webkit-scrollbar {
-              width: 4px; /* Adjust the width of the scrollbar */
+              width: 4px;
             }
 
             textarea::-webkit-scrollbar-track {
-              background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track */
+              background-color: rgba(0, 0, 0, 0);
 
             }
 
             textarea::-webkit-scrollbar-corner {
-              background-color: rgba(0, 0, 0, 0); /* Change the background color of the scrollbar track corner */
+              background-color: rgba(0, 0, 0, 0);
             }
 
             textarea::-webkit-scrollbar-thumb {
-              background-color: $accent-green-translucent /* Change the color of the scrollbar thumb */
+              background-color: $accent-green-translucent;
             }
 
             textarea::-webkit-scrollbar-thumb:hover {
-              background-color: $accent-green; /* Change the color of the scrollbar thumb on hover */
+              background-color: $accent-green;
             }
 
           }
