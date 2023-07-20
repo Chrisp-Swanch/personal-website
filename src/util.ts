@@ -1,10 +1,5 @@
 import Email from '../models/Email'
 
-// high-level HTML element, used to reset the state as the user scrolls
-export const defaultElement =
-  window.document.getElementsByClassName('views-container')[0]
-
-
 // Type for the checkEmailForm function return
 type CheckResult = {
   pass: boolean

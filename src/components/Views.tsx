@@ -1,13 +1,13 @@
-import About from './About'
-import Work from './Work/Work'
-import Contact from './Contact/Contact'
+import AboutContainer from './About/AboutContainer'
+import WorkContainer from './Work/WorkContainer'
+import ContactContainer from './Contact/ContactContainer'
 
 function Views() {
   return (
     <div className="views-container">
-      <About />
-      <Work />
-      <Contact />
+      <AboutContainer />
+      <WorkContainer />
+      <ContactContainer />
     </div>
   )
 }

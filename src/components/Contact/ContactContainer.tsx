@@ -1,19 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useState, useRef, useEffect, useContext } from 'react'
-import { defaultElement } from '../../util'
 import { Context } from '../../context'
-import WorkContent from './WorkContent'
+import ContactForm from './ContactForm'
 
-function Work() {
-  const [currentElement, setCurrentElement] = useState({})
+function ContactContainer() {
+  const [refresh, setRefresh] = useState(false as boolean)
   const { setNavSelection } = useContext(Context)
 
   const elementRef = useRef(null)
   const { current } = elementRef
 
   useEffect(() => {
-    setCurrentElement(defaultElement)
+    setRefresh(true)
 
     const handleScroll = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -36,16 +35,17 @@ function Work() {
         observer.unobserve(current)
       }
     }
-  }, [currentElement])
+  }, [refresh])
 
   return (
-    <>
-      <section ref={elementRef} id="work" className="section-container__work">
-        <div className="section-container__work__gradient"></div>
-        <WorkContent />
-      </section>
-    </>
+    <section
+      ref={elementRef}
+      className="section-container__contact"
+      id="contact"
+    >
+      <ContactForm />
+    </section>
   )
 }
 
-export default Work
+export default ContactContainer

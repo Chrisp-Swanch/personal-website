@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
-import { Context } from '../context'
+import { Context } from '../../context'
 
 interface Props {
   id: string
 }
 
-function NavSelected(props: Props) {
+function VerticalText(props: Props) {
   const { id } = props
   const { navSelection } = useContext(Context)
   const [headerText, setHeaderText] = useState('')
@@ -24,4 +24,4 @@ function NavSelected(props: Props) {
   )
 }
 
-export default NavSelected
+export default VerticalText

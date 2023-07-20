@@ -9,7 +9,7 @@ interface Props {
   title: navElem
 }
 
-function NavTitle(props: Props) {
+function NavLogo(props: Props) {
   const { display } = props.title
 
   return (
@@ -19,4 +19,4 @@ function NavTitle(props: Props) {
   )
 }
 
-export default NavTitle
+export default NavLogo

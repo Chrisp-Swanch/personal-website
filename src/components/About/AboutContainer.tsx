@@ -1,19 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useContext, useEffect, useRef, useState } from 'react'
-import { Context } from '../context'
-import { defaultElement } from '../util'
+import { Context } from '../../context'
 import AboutContent from './AboutContent'
 
-function About() {
-  const [currentElement, setCurrentElement] = useState({})
+function AboutContainer() {
+  const [refresh, setRefresh] = useState(false as boolean)
   const { setNavSelection } = useContext(Context)
 
   const elementRef = useRef(null)
   const { current } = elementRef
 
   useEffect(() => {
-    setCurrentElement(defaultElement)
+    setRefresh(true)
 
     const handleScroll = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -36,7 +35,7 @@ function About() {
         observer.unobserve(current)
       }
     }
-  }, [currentElement])
+  }, [refresh])
 
   return (
     <section ref={elementRef} className="section-container__about" id="about">
@@ -45,4 +44,4 @@ function About() {
   )
 }
 
-export default About
+export default AboutContainer

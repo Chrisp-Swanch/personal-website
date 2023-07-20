@@ -1,4 +1,4 @@
-import NavTitle from './NavTitle'
+import NavTitle from './NavLogo'
 import NavOption from './NavOption'
 
 const navTitle = {
