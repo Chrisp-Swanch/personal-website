@@ -10,7 +10,7 @@ interface Props {
 
 function ParkingTix(props: Props) {
   const { feature, selection } = props
-  const { id, name, date, paragraphs, images, links } = feature
+  const { id, name, date, paragraphs, images, imageAlt, links } = feature
   const link = links[0]
 
   useEffect(() => {
@@ -26,17 +26,17 @@ function ParkingTix(props: Props) {
           <h4>
             {name} / {date}
           </h4>
-          <img src={images[0]} alt={name} />
+          <img src={images[0]} alt={imageAlt[0]} />
           <p>{paragraphs[0]}</p>
           <p>{paragraphs[1]}</p>
-          <img src={images[1]} alt={name} />
+          <img src={images[1]} alt={imageAlt[0]} />
           <p>{paragraphs[2]}</p>
           <p>{paragraphs[3]}</p>
           <p>{paragraphs[4]}</p>
           <p className="italics">
             {paragraphs[5]}{' '}
-            <Link to={link} target="_blank">
-              here
+            <Link to={link} target="_blank" aria-label="view ParkingTix repo on Github">
+              view the Github repo
             </Link>
             .
           </p>

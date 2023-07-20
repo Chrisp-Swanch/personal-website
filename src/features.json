@@ -9,12 +9,17 @@
       "Users have access to a dashboard to track the progress of their claims, and view the email history for each thread.",
       "The app generates responses to incoming emails, and sends them through the app- who will give in first?",
       "This was made collaboratively during the final week of a coding bootcamp.",
-      "ParkingTix is not currently deployed, but you can view the GitHub repo "
+      "ParkingTix is not currently deployed, but you can "
     ],
     "images": [
       "/images/parking-tix_0.png",
       "/images/parking-tix_1.png",
       "/images/parking-tix_2.png"
+    ],
+    "imageAlt": [
+      "ParkingTix landing page",
+      "ParkingTix disputes page",
+      "ParkingTix dashboard"
     ],
     "links": ["https://github.com/Chrisp-Swanch/parking-tix"]
   },
@@ -28,6 +33,10 @@
       "This is a solo project, made during my final year at unviersity."
     ],
     "images": ["/images/grey-ghost_0.jpeg", "/images/grey-ghost_1.jpeg"],
+    "imageAlt": [
+      "Grey Ghost landing",
+      "Grey Ghost forest"
+    ],
     "links": []
   }
 ]

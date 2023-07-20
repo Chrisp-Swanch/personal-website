@@ -4,5 +4,6 @@ export interface Feature {
   date: string
   paragraphs: string[]
   images: string[]
+  imageAlt: string[]
   links: string[]
 }

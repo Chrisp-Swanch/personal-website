@@ -9,7 +9,7 @@ interface Props {
 
 function GreyGhost(props: Props) {
   const { feature, selection } = props
-  const { id, name, date, paragraphs, images } = feature
+  const { id, name, date, paragraphs, images, imageAlt } = feature
 
   useEffect(() => {
   }, [selection])
@@ -23,9 +23,9 @@ function GreyGhost(props: Props) {
         >
           <h4>
             {name} / {date}
-          </h4>
-          <img src={images[0]} alt={name} />
-          <img src={images[1]} alt={name} />
+          </h4>0
+          <img src={images[0]} alt={imageAlt[0]} />
+          <img src={images[1]} alt={imageAlt[1]} />
           <p>{paragraphs[0]}</p>
         </div>
       )}

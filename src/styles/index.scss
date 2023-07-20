@@ -43,7 +43,6 @@ a {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: auto;
 }
 
 .nav-container {
@@ -57,10 +56,22 @@ a {
 
   &__option {
     padding: 0px 12px 0px 12px;
-    @include red-bg;
     pointer-events: auto;
-  }
+    
+    button {
+      @include green-text;
+      font-family: var(--tiempos-fine-regular);
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      width: fit-content;
+      height: fit-content;
+    }
 
+  }
 
   #title {
     pointer-events: auto;
@@ -123,6 +134,7 @@ a {
   margin-left: auto;
   width: fit-content;
   height: fit-content;
+  cursor: pointer;
 }
 
 #send-button:active {

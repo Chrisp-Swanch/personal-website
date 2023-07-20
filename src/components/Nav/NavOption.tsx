@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 interface Props {
   option: string
 }
@@ -19,9 +18,10 @@ function NavOption(props: Props) {
 
   return (
     <span className="nav-container__option">
-      <Link to="/" onClick={handleClick}>
+        <button onClick={handleClick}>
+
         {option}
-      </Link>
+        </button>
     </span>
   )
 }
