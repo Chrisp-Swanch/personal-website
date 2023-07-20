@@ -337,7 +337,6 @@ a {
       &__feature-container::-webkit-scrollbar-thumb:hover {
         background-color: $accent-green;
       }
-
     }
 
     &__contact {
@@ -422,12 +421,9 @@ a {
             textarea::-webkit-scrollbar-thumb:hover {
               background-color: $accent-green;
             }
-
           }
         }
       }
     }
-
   }
-
 }

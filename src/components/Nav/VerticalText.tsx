@@ -12,7 +12,6 @@ function VerticalText(props: Props) {
 
   useEffect(() => {
     setVerticalText(id)
-    console.log(navSelection)
   }, [navSelection, id])
 
   return (

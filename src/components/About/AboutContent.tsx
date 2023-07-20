@@ -12,7 +12,6 @@ function AboutContent() {
   }
 
   useEffect(() => {
-    console.log('About useEffect')
     if (navSelection === 'contact') {
       setIsVisible(false)
     } else {
