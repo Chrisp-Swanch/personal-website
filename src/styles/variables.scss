@@ -40,6 +40,11 @@ $breakpoints: (
 @mixin green-text {
   text-decoration: none;
   color: $accent-green;
+
+}
+
+@mixin green-text-alt {
+  color: $accent-green-translucent;
 }
 
 @mixin red-bg {

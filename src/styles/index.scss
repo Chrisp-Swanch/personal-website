@@ -120,6 +120,10 @@ a {
   position: relative;
   left: -8px;
 
+  @include breakpoint(xs) {
+    @include green-text-alt;
+  }
+
   p {
     margin: 0;
   }
@@ -220,10 +224,9 @@ a {
       height: 100vh;
       min-height: fill-available;
       scroll-snap-align: start;
-      
+
       
       &__content {
-        // background-color: red;
         position: fixed;
         top: 23%;
         left: 25%;
@@ -235,8 +238,8 @@ a {
         padding-left: 10px;
         
         @include breakpoint(xs) {
-          top: 13%;
-          left: 15%;
+          top: 20%;
+          left: 14%;
           max-width: 300px;
           min-width: 150px;
           border: none;
@@ -274,6 +277,15 @@ a {
         max-width: 80vw;
         max-height: 70%;
         @include fade-animation;
+        
+        @include breakpoint(xs) {
+          display: flex;
+          flex-direction: column;
+          top: 10vh;
+          // background-color: red;
+
+        }
+
       }
 
       &__sidebar {
@@ -317,6 +329,10 @@ a {
         overflow: scroll;
         @include page-padding;
         @include vertical-border;
+
+        @include breakpoint(xs) {
+          border: none;
+        }
 
         &__feature {
           @include fade-animation;
