@@ -59,6 +59,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: calc($page-padding * 1.1);
   }
 
   &__option {
@@ -121,7 +122,7 @@ a {
   left: -8px;
 
   @include breakpoint(xs) {
-    @include green-text-alt;
+    display: none;
   }
 
   p {
@@ -239,10 +240,9 @@ a {
         
         @include breakpoint(xs) {
           top: 20%;
-          left: 14%;
+          left: 13%;
           max-width: 300px;
           min-width: 150px;
-          border: none;
         }
       }
     }
@@ -274,16 +274,15 @@ a {
         justify-content: center;
         position: relative;
         top: 14vh;
-        max-width: 80vw;
+        max-width: 90vw;
         max-height: 70%;
         @include fade-animation;
         
         @include breakpoint(xs) {
           display: flex;
           flex-direction: column;
-          top: 10vh;
-          // background-color: red;
-
+          top: 12vh;
+          max-height: 75%;
         }
 
       }
@@ -294,6 +293,12 @@ a {
         display: flex;
         flex-direction: column;
         width: fit-content;
+
+        @include breakpoint(xs) {
+          border-top: 1px black solid;
+          border-bottom: 1px black solid;
+          @include page-padding;
+        }
 
         button {
           display: flex;
@@ -332,6 +337,8 @@ a {
 
         @include breakpoint(xs) {
           border: none;
+          // position: relative;
+          // top: 10px;
         }
 
         &__feature {
@@ -397,11 +404,12 @@ a {
         width: fit-content;
         height: fit-content;
 
+        
         form {
           display: flex;
           flex-direction: column;
           justify-content: center;
-
+          
           .field {
             display: flex;
             flex-direction: column;
@@ -410,6 +418,10 @@ a {
             font-family: var(--calibre-regular);
             margin-bottom: 5px;
             width: 65vw;
+            
+            @include breakpoint(xs) {
+              width: 82vw;
+            }
 
             label {
               position: relative;
