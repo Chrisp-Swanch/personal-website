@@ -7,6 +7,35 @@ $accent-green-translucent: #03210350;
 
 $text-main: rgba(0, 0, 0, 0.92);
 
+$breakpoints: (
+  // "xxs": "max-width: 369.98px",
+  // "xs": "(min-width: 370px) and (max-width: 575.98px)",
+  "xs": "max-width: 575.98px",
+  "md": "(min-width: 576px) and (max-width: 767.98px)",
+  "sm": "(min-width: 768px) and (max-width: 991.98px)",
+  "lg": "(min-width: 992px) and (max-width: 1199.98px)",
+  "xl": "(min-width: 1200px) and (max-width: 1399.98px)",
+  "xxl": "min-width: 1400px",
+);
+
+@mixin page-padding {
+  padding: $page-padding;
+
+  @include breakpoint(xs) {
+    padding: calc($page-padding * 0.7);
+  }
+}
+
+@mixin breakpoint($user-value) {
+  $map: map-get($breakpoints, $user-value);
+  @if $map {
+    @media (#{$map}) {
+      @content;
+    }
+  } @else {
+    @error "breakpoint '#{$user-value}' not defined"
+  }
+};
 
 @mixin green-text {
   text-decoration: none;
@@ -17,10 +46,6 @@ $text-main: rgba(0, 0, 0, 0.92);
   :active {
     background-color: red;
   }
-}
-
-@mixin page-padding {
-  padding: $page-padding;
 }
 
 @mixin fade-animation {

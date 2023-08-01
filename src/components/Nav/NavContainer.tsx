@@ -23,15 +23,17 @@ function Nav() {
   return (
     <nav className="nav-container">
       <NavLogo key="logo" display={display} />
-      {navOptions.map((elem) => {
-        const { option } = elem
-        return (
-          <NavOption
-            key={option}
-            option={option}
-          />
-        )
-      })}
+      <div className="nav-container__links">
+        {navOptions.map((elem) => {
+          const { option } = elem
+          return (
+            <NavOption
+              key={option}
+              option={option}
+            />
+          )
+        })}
+      </div>
     </nav>
   )
 }

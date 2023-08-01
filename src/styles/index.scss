@@ -25,7 +25,7 @@
 }
 
 body {
-  padding: $page-padding;
+  @include page-padding;
 }
 
 h1 {
@@ -54,6 +54,13 @@ a {
   left: 0;
   justify-content: flex-end;
 
+  @include breakpoint(xs) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   &__option {
     padding: 0px 12px 0px 12px;
     pointer-events: auto;
@@ -77,6 +84,13 @@ a {
     pointer-events: auto;
     padding: 0;
     margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+
+    @include breakpoint(xs) {
+      margin-right: 0%;
+      padding-bottom: 8px;
+    }
 
     button {
       @include green-text;
@@ -194,9 +208,9 @@ a {
   height: 300vh;
   font-size: 0.86rem;
   scroll-snap-align: end;
-
+  
   .section-container {
-
+    
     &__about {
       top: 0px;
       z-index: -4;
@@ -206,8 +220,10 @@ a {
       height: 100vh;
       min-height: fill-available;
       scroll-snap-align: start;
-
+      
+      
       &__content {
+        // background-color: red;
         position: fixed;
         top: 23%;
         left: 25%;
@@ -217,6 +233,14 @@ a {
         @include vertical-border;
         font-family: var(--calibre-regular);
         padding-left: 10px;
+        
+        @include breakpoint(xs) {
+          top: 13%;
+          left: 15%;
+          max-width: 300px;
+          min-width: 150px;
+          border: none;
+        }
       }
     }
 
