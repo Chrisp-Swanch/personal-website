@@ -21,6 +21,11 @@
       "ParkingTix disputes page",
       "ParkingTix dashboard"
     ],
+    "imageCaption": [
+      "ParkingTix landing page",
+      "ParkingTix disputes page",
+      "ParkingTix dashboard"
+    ],
     "links": ["https://github.com/Chrisp-Swanch/parking-tix"]
   },
   {
@@ -36,6 +41,10 @@
     "imageAlt": [
       "Grey Ghost landing",
       "Grey Ghost forest"
+    ],
+    "imageCaption": [
+      "Grey Ghost landing screen, showing rear projection display and touch interface",
+      "Grey Ghost forest scene"
     ],
     "links": []
   }

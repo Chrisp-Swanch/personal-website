@@ -337,12 +337,17 @@ a {
 
         @include breakpoint(xs) {
           border: none;
-          // position: relative;
-          // top: 10px;
         }
 
         &__feature {
           @include fade-animation;
+
+          &__image-container {
+            width: fit-content;
+            max-height: fit-content;
+            margin: 10px 0px 10px 0px;
+            cursor: pointer;
+          }
 
           h4 {
             @include green-text;
@@ -360,6 +365,15 @@ a {
 
           img {
             max-width: 100%;
+            display: block;
+          }
+
+          p.caption {
+            font-family: var(--calibre-regular-italic);
+            margin-top: -5px;
+            padding: 0px;
+            font-size: 0.8rem;
+            color: rgba(0, 0, 0, 0.75);
           }
         }
       }

@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import InteractiveImage from './InteractiveImage'
 import { Feature } from '../../../models/Feature'
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 
 function ParkingTix(props: Props) {
   const { feature, selection } = props
-  const { id, name, date, paragraphs, images, imageAlt, links } = feature
+  const { id, name, date, paragraphs, images, imageAlt, imageCaption, links } = feature
   const link = links[0]
 
   useEffect(() => {
@@ -26,11 +27,13 @@ function ParkingTix(props: Props) {
           <h4>
             {name} / {date}
           </h4>
-          <img src={images[0]} alt={imageAlt[0]} />
-          <p>{paragraphs[0]}</p>
-          <p>{paragraphs[1]}</p>
-          <img src={images[1]} alt={imageAlt[0]} />
-          <p>{paragraphs[2]}</p>
+          <InteractiveImage src={images[0]} alt={imageAlt[0]} caption={imageCaption[0]}/>
+          {/* <img src={images[0]} alt={imageAlt[0]} /> */}
+          {/* <p>{paragraphs[0]}</p>
+          <p>{paragraphs[1]}</p> */}
+          <InteractiveImage src={images[1]} alt={imageAlt[1]} caption={imageCaption[1]}/>
+          {/* <img src={images[1]} alt={imageAlt[1]} /> */}
+          {/* <p>{paragraphs[2]}</p>
           <p>{paragraphs[3]}</p>
           <p>{paragraphs[4]}</p>
           <p className="italics">
@@ -39,7 +42,7 @@ function ParkingTix(props: Props) {
               view the Github repo
             </Link>
             .
-          </p>
+          </p> */}
         </div>
       )}
     </>

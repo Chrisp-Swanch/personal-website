@@ -5,5 +5,6 @@ export interface Feature {
   paragraphs: string[]
   images: string[]
   imageAlt: string[]
+  imageCaption: string[]
   links: string[]
 }
