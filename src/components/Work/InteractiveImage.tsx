@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import { Context } from '../../context'
 
 interface Props {
   src: string
@@ -7,21 +8,21 @@ interface Props {
 }
 
 function InteractiveImage(props: Props) {
-  const [focused, setFocused] = useState(false)
+  const { setGalleryActive } = useContext(Context)
   const { src, alt, caption } = props
 
-  const handleEnlarge = () => {
-    setFocused(true)
+  const handleGallery = () => {
+    setGalleryActive(true)
   }
 
   return (
     <>
       <div
-        className="section-container__work__feature-container__feature__image-container"
+        className="interactive-image"
         role="button"
-        onClick={handleEnlarge}
+        onClick={handleGallery}
         tabIndex={0}
-        onKeyDown={handleEnlarge}
+        onKeyDown={handleGallery}
       >
         <img src={src} alt={alt} />
       </div>
