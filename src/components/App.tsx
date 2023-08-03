@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ImageData } from '../../models/Feature'
 import { Context, ContextProps } from '../context'
 import { scrollToElement } from '../util'
-import Gallery from './Galley'
+import Gallery from './Gallery'
 
 import NavContainer from './Nav/NavContainer'
 import VerticalText from './Nav/VerticalText'
