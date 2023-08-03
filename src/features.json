@@ -12,19 +12,21 @@
       "ParkingTix is not currently deployed, but you can "
     ],
     "images": [
-      "/images/parking-tix_0.png",
-      "/images/parking-tix_1.png",
-      "/images/parking-tix_2.png"
-    ],
-    "imageAlt": [
-      "ParkingTix landing page",
-      "ParkingTix disputes page",
-      "ParkingTix dashboard"
-    ],
-    "imageCaption": [
-      "ParkingTix landing page",
-      "ParkingTix disputes page",
-      "ParkingTix dashboard"
+      {
+        "path": "/images/parking-tix_0.png",
+        "altText": "ParkingTix landing page",
+        "caption": "ParkingTix landing page"
+      },
+      {
+        "path": "/images/parking-tix_1.png",
+        "altText": "ParkingTix disputes page",
+        "caption": "ParkingTix disputes page"
+      },
+      {
+        "path": "/images/parking-tix_2.png",
+        "altText": "ParkingTix dashboard",
+        "caption": "ParkingTix dashboard"
+      }
     ],
     "links": ["https://github.com/Chrisp-Swanch/parking-tix"]
   },
@@ -37,14 +39,17 @@
       "It was developed as a conceptual piece exploring the role of interactivity in a museum context.",
       "This is a solo project, made during my final year at unviersity."
     ],
-    "images": ["/images/grey-ghost_0.jpeg", "/images/grey-ghost_1.jpeg"],
-    "imageAlt": [
-      "Grey Ghost landing",
-      "Grey Ghost forest"
-    ],
-    "imageCaption": [
-      "Grey Ghost landing screen, showing rear projection display and touch interface",
-      "Grey Ghost forest scene"
+    "images": [
+      {
+        "path": "/images/grey-ghost_0.jpeg",
+        "altText": "Grey Ghost landing",
+        "caption": "Grey Ghost landing screen, showing rear projection display and touch interface"
+      },
+      {
+        "path": "/images/grey-ghost_1.jpeg",
+        "altText": "Grey Ghost forest scene",
+        "caption": "Grey Ghost forest scene"
+      }
     ],
     "links": []
   }

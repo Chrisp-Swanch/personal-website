@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 
 import WorkSideBar from './WorkSideBar'
 import WorkFeatures from './WorkFeatures'
 import features from '../../features.json'
+import { Context } from '../../context'
 
 function WorkContent() {
-  const [selection, setSelection] = useState(0)
+  const [selectedFeature, setSelectedFeature] = useContext(Context)
 
   useEffect(() => {
     setSelection(features[0].id)
