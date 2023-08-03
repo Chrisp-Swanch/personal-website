@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { Context } from '../context'
-import { ImageData } from "../../models/Feature"
 
 function Gallery() {
-  const { galleryActive, setGalleryActive, selectedFeature, galleryImgIndex, setGalleryImgIndex } = useContext(Context)
-  const images = selectedFeature.images
-  const { path, altText } = images[galleryImgIndex]
-  const imgRange = images.length - 1 
+  const { galleryActive, setGalleryActive, galleryImages, galleryImgIndex } = useContext(Context)
+  const { path, altText, caption } = galleryImages[galleryImgIndex]
+  // const imgRange = galleryImages.length - 1 
 
   const handleGallery = () => {
     setGalleryActive(!galleryActive)
@@ -26,6 +24,7 @@ function Gallery() {
       onKeyDown={handleGallery}
     >
       <img className="gallery__image" src={path} alt={altText} />
+      <p className="gallery_caption">{caption}</p>
     </div>
   )
 }

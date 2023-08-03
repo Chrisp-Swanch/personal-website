@@ -1,7 +1,6 @@
 import SideBarOption from "./SideBarOption"
 import { Dispatch, SetStateAction } from "react"
 import { Feature } from "../../../models/Feature"
-
 interface Props {
   features: Feature[]
   selection: number

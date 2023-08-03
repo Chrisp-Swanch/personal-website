@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Feature } from '../../models/Feature'
+import { ImageData } from '../../models/Feature'
 import { Context, ContextProps } from '../context'
-import features from '../features.json'
 import { scrollToElement } from '../util'
 import Gallery from './Galley'
 
@@ -11,17 +10,17 @@ import Views from './Views'
 
 function App() {
   const [navSelection, setNavSelection] = useState('about')
-  const [selectedFeature, setSelectedFeature] = useState(features[0] as Feature)
+  const [galleryImages, setGalleryImages] = useState([] as ImageData[])
   const [galleryActive, setGalleryActive] = useState(false)
   const [galleryImgIndex, setGalleryImgIndex] = useState(0)
 
   const contextValue: ContextProps = {
     navSelection,
     setNavSelection,
-    selectedFeature,
-    setSelectedFeature,
     galleryActive,
     setGalleryActive,
+    galleryImages,
+    setGalleryImages,
     galleryImgIndex,
     setGalleryImgIndex
   }

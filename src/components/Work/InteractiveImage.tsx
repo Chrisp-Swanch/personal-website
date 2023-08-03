@@ -3,16 +3,18 @@ import { Context } from '../../context'
 import { ImageData } from "../../../models/Feature"
 
 interface Props {
-  image: ImageData
+  images: ImageData[]
   index: number
 }
 
 function InteractiveImage(props: Props) {
-  const { setGalleryActive } = useContext(Context)
-  const { image, index } = props
-  const { path, altText, caption } = image
+  const { setGalleryActive, setGalleryImages, setGalleryImgIndex } = useContext(Context)
+  const { images, index } = props
+  const { path, altText, caption } = images[index]
 
   const handleGallery = () => {
+    setGalleryImages(images)
+    setGalleryImgIndex(index)
     setGalleryActive(true)
   }
 

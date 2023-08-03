@@ -27,11 +27,11 @@ function ParkingTix(props: Props) {
           <h4>
             {name} / {date}
           </h4>
-          <InteractiveImage image={images[0]} index={0} />
+          <InteractiveImage images={images} index={0} />
           {/* <img src={images[0]} alt={imageAlt[0]} /> */}
           {/* <p>{paragraphs[0]}</p>
           <p>{paragraphs[1]}</p> */}
-          <InteractiveImage image={images[1]} index={1} />
+          <InteractiveImage images={images} index={1} />
           {/* <img src={images[1]} alt={imageAlt[1]} /> */}
           {/* <p>{paragraphs[2]}</p>
           <p>{paragraphs[3]}</p>
