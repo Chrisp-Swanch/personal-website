@@ -25,8 +25,8 @@ function GreyGhost(props: Props) {
           <h4>
             {name} / {date}
           </h4>
-          <InteractiveImage image={images[0]} index={0} />
-          <InteractiveImage image={images[1]} index={1} />
+          <InteractiveImage images={images} index={0} />
+          <InteractiveImage images={images} index={1} />
           <p>{paragraphs[0]}</p>
         </div>
       )}
