@@ -4,7 +4,7 @@ import ContactContainer from './Contact/ContactContainer'
 
 function Views() {
   return (
-    <div className="views-container">
+    <div className="views-container" id="views">
       <AboutContainer />
       <WorkContainer />
       <ContactContainer />

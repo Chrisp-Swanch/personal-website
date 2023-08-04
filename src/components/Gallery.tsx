@@ -1,18 +1,22 @@
 import { useContext, useEffect } from 'react'
+import { toggleScrolling, toggleScrollSnap } from '../util'
 import { Context } from '../context'
 
 function Gallery() {
-  const { galleryActive, setGalleryActive, galleryImages, galleryImgIndex } = useContext(Context)
+  const { galleryActive, setGalleryActive, galleryImages, galleryImgIndex } =
+    useContext(Context)
   const { path, altText, caption } = galleryImages[galleryImgIndex]
-  // const imgRange = galleryImages.length - 1 
+  // const imgRange = galleryImages.length - 1
 
   const handleGallery = () => {
     setGalleryActive(!galleryActive)
-    document.body.style.overflow = 'auto'
+    toggleScrolling(true)
+    toggleScrollSnap(true)
   }
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden'
+    toggleScrolling(false)
+    toggleScrollSnap(false)
   }, [])
 
   return (
@@ -23,8 +27,10 @@ function Gallery() {
       tabIndex={0}
       onKeyDown={handleGallery}
     >
-      <img className="gallery__image" src={path} alt={altText} />
-      <p className="gallery_caption">{caption}</p>
+      <div className="gallery__image-container">
+        <img className="gallery__image" src={path} alt={altText} />
+        <p className="gallery__caption">Image: {caption}</p>
+      </div>
     </div>
   )
 }

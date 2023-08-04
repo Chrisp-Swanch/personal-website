@@ -8,6 +8,40 @@ export const scrollToElement = (id: string) => {
   }
 }
 
+// Toggle can scroll
+export const toggleScrolling = (isActive: boolean) => {
+  switch (isActive) {
+    case true:
+      document.body.style.overflow = 'auto'
+      break
+    case false:
+      document.body.style.overflow = 'hidden'
+      break
+    default:
+      return
+  }
+}
+
+// Toggle scroll snapping
+export const toggleScrollSnap = (isActive: boolean) => {
+  const views = ['views', 'about', 'work', 'contact']
+  views.forEach((view) => {
+    const element = document.getElementById(view)
+    if (element !== null &&element !== undefined) {
+      switch (isActive) {
+        case true:
+          element.style.scrollSnapAlign = 'start'
+          break
+        case false:
+          element.style.scrollSnapAlign = 'none'
+          break
+        default:
+          return
+      }
+    }
+  })
+}
+
 // Type for the checkEmailForm function return
 type CheckResult = {
   pass: boolean

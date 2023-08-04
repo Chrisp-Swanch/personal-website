@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "dev-home": "vite --host 192.168.178.21",
     "dev-work": "vite --host 192.168.1.215",
     "build": "tsc && vite build",
