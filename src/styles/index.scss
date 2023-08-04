@@ -7,21 +7,26 @@
   font-family: Tiempos Fine Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
   line-height: 1.5;
-  scroll-snap-type: y mandatory;
-
+  
   --tiempos-fine-regular: Tiempos Fine Regular;
   --tiempos-semibold: Tiempos Fine Semibold;
   --calibre-regular: Calibre Regular;
   --calibre-regular-italic: Calibre Regular Italic;
   --calibre-bold: Calibre Bold;
-
+  
   background-color: $background-main;
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  scroll-snap-type: y mandatory;
+  
+  @include breakpoint(xs) {
+    overflow: hidden;
+  }
 }
 
 body {
