@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import { Feature } from '../../../models/Feature'
 import InteractiveImage from './InteractiveImage'
 
@@ -11,9 +11,6 @@ interface Props {
 function GreyGhost(props: Props) {
   const { feature, selection } = props
   const { id, name, date, paragraphs, images } = feature
-
-  useEffect(() => {
-  }, [selection])
 
   return (
     <>

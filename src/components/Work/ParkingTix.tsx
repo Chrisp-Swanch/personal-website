@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 import InteractiveImage from './InteractiveImage'
 import { Feature } from '../../../models/Feature'
@@ -13,9 +13,6 @@ function ParkingTix(props: Props) {
   const { feature, selection } = props
   const { id, name, date, paragraphs, images, links } = feature
   const link = links[0]
-
-  useEffect(() => {}, [selection])
-
   return (
     <>
       {selection === id && (
