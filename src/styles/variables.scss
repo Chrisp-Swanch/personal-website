@@ -22,7 +22,7 @@ $breakpoints: (
   padding: $page-padding;
 
   @include breakpoint(xs) {
-    padding: calc($page-padding * 0.6);
+    padding: calc($page-padding * 0.3);
   }
 }
 

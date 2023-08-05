@@ -13,7 +13,8 @@ function App() {
   const [galleryImages, setGalleryImages] = useState([] as ImageData[])
   const [galleryActive, setGalleryActive] = useState(false)
   const [galleryImgIndex, setGalleryImgIndex] = useState(0)
-
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false)
+  
   const contextValue: ContextProps = {
     navSelection,
     setNavSelection,
@@ -22,7 +23,9 @@ function App() {
     galleryImages,
     setGalleryImages,
     galleryImgIndex,
-    setGalleryImgIndex
+    setGalleryImgIndex,
+    isAutoScrolling,
+    setIsAutoScrolling
   }
 
   useEffect(() => {
@@ -33,6 +36,7 @@ function App() {
     <>
       <Context.Provider value={contextValue}>
         {galleryActive && <Gallery />}
+        {isAutoScrolling && <div className="overlay"></div>}
         <section className="nav-section">
           <NavContainer />
           <VerticalText key={navSelection} id={navSelection} />

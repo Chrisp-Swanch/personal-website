@@ -42,6 +42,11 @@ export const toggleScrollSnap = (isActive: boolean) => {
   })
 }
 
+// Toggle wherther the user can click/touch, to prevent weird behavior when autoscrolling
+export const toggleCanInteract = () => {
+  document.body.style.cursor = 'none'
+}
+
 // Type for the checkEmailForm function return
 type CheckResult = {
   pass: boolean

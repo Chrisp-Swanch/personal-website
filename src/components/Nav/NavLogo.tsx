@@ -1,13 +1,29 @@
+import { useContext } from 'react'
+import { Context } from '../../context'
 import { scrollToElement } from "../../util"
 interface Props {
   display: string[]
 }
 
+let timer: number
+
 function NavLogo(props: Props) {
   const { display } = props
+  const { navSelection, isAutoScrolling, setIsAutoScrolling } =
+  useContext(Context)
 
   const handleClick = () => {
-    scrollToElement('about')
+    if (navSelection !== 'about' && !isAutoScrolling) {
+      setIsAutoScrolling(true)
+
+      clearTimeout(timer)
+
+      scrollToElement('about')
+
+      timer = setTimeout(() => {
+        setIsAutoScrolling(false)
+      }, 720)
+    }
   }
 
   return (

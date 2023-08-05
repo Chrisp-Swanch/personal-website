@@ -1,5 +1,5 @@
 import React, { createContext } from "react"
-import { Feature, ImageData } from "../models/Feature"
+import { ImageData } from "../models/Feature"
 
 export interface ContextProps {
   navSelection: string
@@ -10,6 +10,8 @@ export interface ContextProps {
   setGalleryImages: React.Dispatch<React.SetStateAction<ImageData[]>>
   galleryImgIndex: number
   setGalleryImgIndex: React.Dispatch<React.SetStateAction<number>>
+  isAutoScrolling: boolean
+  setIsAutoScrolling: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const Context = createContext<ContextProps>({
@@ -21,4 +23,6 @@ export const Context = createContext<ContextProps>({
   setGalleryImages: () => {},
   galleryImgIndex: 0,
   setGalleryImgIndex: () => {},
+  isAutoScrolling: false,
+  setIsAutoScrolling: () => {},
 })
