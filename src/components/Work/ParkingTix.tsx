@@ -14,8 +14,7 @@ function ParkingTix(props: Props) {
   const { id, name, date, paragraphs, images, links } = feature
   const link = links[0]
 
-  useEffect(() => {
-  }, [selection])
+  useEffect(() => {}, [selection])
 
   return (
     <>
@@ -27,22 +26,24 @@ function ParkingTix(props: Props) {
           <h4>
             {name} / {date}
           </h4>
+          <p>{paragraphs[0]}</p>
+          <p>{paragraphs[1]}</p>
           <InteractiveImage images={images} index={0} />
-          {/* <img src={images[0]} alt={imageAlt[0]} /> */}
-          {/* <p>{paragraphs[0]}</p>
-          <p>{paragraphs[1]}</p> */}
-          <InteractiveImage images={images} index={1} />
-          {/* <img src={images[1]} alt={imageAlt[1]} /> */}
-          {/* <p>{paragraphs[2]}</p>
+          <p>{paragraphs[2]}</p>
           <p>{paragraphs[3]}</p>
+          <InteractiveImage images={images} index={1} />
           <p>{paragraphs[4]}</p>
           <p className="italics">
             {paragraphs[5]}{' '}
-            <Link to={link} target="_blank" aria-label="view ParkingTix repo on Github">
+            <Link
+              to={link}
+              target="_blank"
+              aria-label="view ParkingTix repo on Github"
+            >
               view the Github repo here
             </Link>
             .
-          </p> */}
+          </p>
         </div>
       )}
     </>

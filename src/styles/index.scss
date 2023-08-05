@@ -6,7 +6,7 @@
 :root {
   font-family: Tiempos Fine Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
-  line-height: 1.5;
+  line-height: 1.4;
   
   --tiempos-fine-regular: Tiempos Fine Regular;
   --tiempos-semibold: Tiempos Fine Semibold;
@@ -335,7 +335,7 @@ a {
         justify-content: center;
         position: relative;
         top: 10vh;
-        max-width: 90vw;
+        width: 90vw;
         max-height: 82%;
         @include fade-animation;
         
@@ -402,11 +402,21 @@ a {
 
         &__feature {
           @include fade-animation;
+          position: relative;
+          
+          &__subsection {
+            top: 0;
+            background-color: $background-main;
+          }
 
           h4 {
             @include green-text;
-            margin-top: 0;
+            margin: 0 0 10px 0;
             font-family: var(--calibre-regular-italic);
+            // color: rgba(255, 255, 255, 0.671);
+            // mix-blend-mode: difference;
+            // position: sticky;
+            // top: 0;
           }
 
           a {
@@ -414,7 +424,8 @@ a {
           }
 
           img {
-            max-width: 100%;
+            max-width: 95%;
+            max-height: inherit;
             display: block;
           }
 
@@ -425,6 +436,11 @@ a {
             padding: 0px;
             font-size: 0.8rem;
             color: rgba(0, 0, 0, 0.73);
+            // background-color: red;
+          }
+
+          p.italics {
+            font-family: var(--calibre-regular-italic);
           }
         }
       }
